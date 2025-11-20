@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.id/v1
+kind: Ingress
+metadata:
+  name: dashboard-ingress-tls
+  nmaespace: kubernetes-dashboard
+spec:
+  tls:
+  - hosts:
+    - dashboard-tls.com
+    secretName: dashboard-secret-tls
+  rules:
+  - host: dashboard-tls.comm
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port:
+              number: 80
