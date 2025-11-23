@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+meatadata:
+  name: pvc-default
+spec: 
+  storageClassName: manual
+  volumeMode: Filesystem 
+  accessModes: 
+    - ReadWirteOnce 
+  resources: 
+    requests: 
+      storage: 10Gi
